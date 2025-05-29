@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    #countdown {
+      font-size: 2em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    button {
+      background: #ff6347;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #ff4500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Our Offer!</h1>
+    <p>Get ready to discover something amazing. You will be redirected shortly.</p>
+    <div id="countdown">5</div>
+    <button id="proceedBtn">Click to Proceed Now</button>
+  </div>
+
+  <script>
+    const redirectUrl = "https://doctoredits.com/1812446";
+    let countdownNumber = 5;
+    const countdownEl = document.getElementById("countdown");
+    const proceedBtn = document.getElementById("proceedBtn");
+
+    // Count down every second
+    const countdownInterval = setInterval(() => {
+      countdownNumber--;
+      if (countdownNumber <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = redirectUrl;
+      } else {
+        countdownEl.textContent = countdownNumber;
+      }
+    }, 1000);
+
+    // Redirect immediately on button click
+    proceedBtn.addEventListener("click", () => {
+      window.location.href = redirectUrl;
+    });
+  </script>
+</body>
+</html>

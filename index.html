@@ -1,83 +1,65 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="refresh" content="5;url=https://wait-page.eu/a/NM9gUjjNJi4qAK">
+  <title>جارٍ تحويلك...</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #1e90ff;
-      color: white;
-      text-align: center;
-      padding: 50px;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       margin: 0;
-    }
-    .container {
-      max-width: 400px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      text-align: center;
     }
     h1 {
-      margin-bottom: 20px;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
     p {
-      font-size: 1.2em;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ffd700;
       margin-bottom: 30px;
     }
-    #countdown {
-      font-size: 2em;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-    button {
-      background: #ff6347;
-      border: none;
-      padding: 15px 30px;
+    a.button {
+      background-color: #f39c12;
       color: white;
-      font-size: 1.2em;
+      padding: 15px 30px;
       border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
-      background: #ff4500;
+    a.button:hover {
+      background-color: #e67e22;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Our Offer!</h1>
-    <p>Get ready to discover something amazing. You will be redirected shortly.</p>
-    <div id="countdown">5</div>
-    <button id="proceedBtn">Click to Proceed Now</button>
-  </div>
+  <h1>🎯 عرض مميز في انتظارك!</h1>
+  <p>جاري التحويل خلال ثوانٍ قليلة...</p>
+  <div class="countdown" id="countdown">5</div>
+  <a class="button" href="https://wait-page.eu/a/NM9gUjjNJi4qAK">اضغط هنا إذا لم يتم التحويل تلقائيًا</a>
 
   <script>
-    const redirectUrl = "https://doctoredits.com/1812446";
-    let countdownNumber = 5;
-    const countdownEl = document.getElementById("countdown");
-    const proceedBtn = document.getElementById("proceedBtn");
-
-    // Count down every second
-    const countdownInterval = setInterval(() => {
-      countdownNumber--;
-      if (countdownNumber <= 0) {
-        clearInterval(countdownInterval);
-        window.location.href = redirectUrl;
-      } else {
-        countdownEl.textContent = countdownNumber;
-      }
+    let seconds = 5;
+    const countdown = document.getElementById('countdown');
+    const timer = setInterval(() => {
+      seconds--;
+      countdown.textContent = seconds;
+      if (seconds <= 0) clearInterval(timer);
     }, 1000);
-
-    // Redirect immediately on button click
-    proceedBtn.addEventListener("click", () => {
-      window.location.href = redirectUrl;
-    });
   </script>
 </body>
 </html>

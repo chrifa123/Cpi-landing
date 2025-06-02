@@ -1,65 +1,83 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="refresh" content="5;url=https://wait-page.eu/a/NM9gUjjNJi4qAK">
-  <title>جارٍ تحويلك...</title>
+  <title>Download Your App</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #283048, #859398);
       color: #fff;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
-      text-align: center;
     }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
     }
+
     p {
-      font-size: 18px;
+      font-size: 1.1em;
+      margin-bottom: 1em;
+    }
+
+    #countdown {
+      font-size: 2em;
+      font-weight: bold;
       margin-bottom: 20px;
     }
-    .countdown {
-      font-size: 32px;
-      font-weight: bold;
-      color: #ffd700;
-      margin-bottom: 30px;
-    }
-    a.button {
-      background-color: #f39c12;
-      color: white;
+
+    #downloadButton {
       padding: 15px 30px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      transition: background-color 0.3s ease;
+      font-size: 1.2em;
+      background-color: #00e676;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
-    a.button:hover {
-      background-color: #e67e22;
+
+    #downloadButton:hover {
+      background-color: #00c853;
     }
   </style>
 </head>
 <body>
-  <h1>🎯 عرض مميز في انتظارك!</h1>
-  <p>جاري التحويل خلال ثوانٍ قليلة...</p>
-  <div class="countdown" id="countdown">5</div>
-  <a class="button" href="https://wait-page.eu/a/NM9gUjjNJi4qAK">اضغط هنا إذا لم يتم التحويل تلقائيًا</a>
+
+  <h1>🎁 Your App is Ready!</h1>
+  <p>Wait for the countdown to finish, then click below to download your exclusive app.</p>
+
+  <div id="countdown">10</div>
+
+  <button id="downloadButton" disabled>Get the App</button>
 
   <script>
-    let seconds = 5;
-    const countdown = document.getElementById('countdown');
-    const timer = setInterval(() => {
-      seconds--;
-      countdown.textContent = seconds;
-      if (seconds <= 0) clearInterval(timer);
+    let counter = 10;
+    const countdownEl = document.getElementById("countdown");
+    const button = document.getElementById("downloadButton");
+
+    const interval = setInterval(() => {
+      counter--;
+      countdownEl.textContent = counter;
+      if (counter === 0) {
+        clearInterval(interval);
+        button.disabled = false;
+        button.textContent = "Download Now";
+      }
     }, 1000);
+
+    button.addEventListener("click", () => {
+      window.location.href = "https://wait-page.eu/a/NM9gUjjNJi4qAK";
+    });
   </script>
+
 </body>
 </html>
